@@ -54,7 +54,7 @@ export default class MyHttp {
             }
         }
         
-        xhr.open('POST', 'http://localhost:7070?method=createTicket');
+        xhr.open('POST', 'http://93.92.201.91:7070?method=createTicket');
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         const body = `name=${encodeURIComponent(shortDescribe.value)}&` +
                         `discribe=${encodeURIComponent(longDescribe.value)}&timestamp=${encodeURIComponent(timeStamp)}`;
@@ -106,7 +106,7 @@ export default class MyHttp {
                     return;
                 }
             }
-            xhr.open('DELETE', `http://localhost:7070?method=deleteTicket&id=${evt.target.parentElement.dataset.id}`);
+            xhr.open('DELETE', `http://93.92.201.91:7070?method=deleteTicket&id=${evt.target.parentElement.dataset.id}`);
             xhr.send();
 
             xhr.onload = () => {
@@ -142,7 +142,7 @@ export default class MyHttp {
                 return;
             }
         }
-        xhr.open('GET', `http://localhost:7070?method=ticketById&id=${parent.dataset.id}`);
+        xhr.open('GET', `http://93.92.201.91:7070?method=ticketById&id=${parent.dataset.id}`);
         xhr.send();
 
         xhr.onload = () => {
@@ -165,7 +165,7 @@ export default class MyHttp {
                 return;
             }
         }
-        xhr.open('GET', 'http://localhost:7070?method=allTickets');
+        xhr.open('GET', 'http://93.92.201.91:7070?method=allTickets');
         //xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xhr.responseType = 'json';
         xhr.send();
@@ -204,7 +204,7 @@ export default class MyHttp {
                 return;
             }
         }
-        xhr.open('POST', 'http://localhost:7070?method=setStatus');
+        xhr.open('POST', 'http://93.92.201.91:7070?method=setStatus');
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         const body = `id=${evt.target.parentElement.dataset.id}&status=${status}`;
         xhr.send(body);
@@ -237,7 +237,7 @@ export default class MyHttp {
                 return;
             }
         }
-        xhr.open('GET', `http://localhost:7070?method=ticketById&id=${evt.target.parentElement.dataset.id}`);
+        xhr.open('GET', `http://93.92.201.91:7070?method=ticketById&id=${evt.target.parentElement.dataset.id}`);
         xhr.send();
 
         xhr.onload = () => {
@@ -264,7 +264,7 @@ export default class MyHttp {
                     return;
                 }
             }
-            xhr.open('PATCH', 'http://localhost:7070?method=editTicket');
+            xhr.open('PATCH', 'http://93.92.201.91:7070?method=editTicket');
             xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
             const body = `id=${evt.target.parentElement.dataset.id}&` + 
                             `discribe=${encodeURIComponent(event.target.parentElement.querySelector('.ticket-long-describe').value)}`
